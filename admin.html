@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Taal HS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="brand">
+        TAAL JUNIOR &amp; SENIOR HIGH SCHOOL
+        <small>Administrator · Enrollment Records</small>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login / Register</a>
+        <a href="enrollment.html">Enrollment</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html" class="active">Admin</a>
+    </nav>
+</header>
+
+<main class="admin-container">
+
+    <!-- ADMIN LOGIN -->
+    <section id="adminLogin" class="auth-box">
+        <h1>Administrator Login</h1>
+        <p>Enter your administrator credentials.</p>
+
+        <form id="adminLoginForm">
+
+            <label for="adminUser">Admin Username</label>
+            <input type="text" id="adminUser"
+                placeholder="Enter admin username" required>
+
+            <label for="adminPass">Admin Password</label>
+            <input type="password" id="adminPass"
+                placeholder="Enter admin password" required>
+
+            <button type="submit" class="btn">
+                Login as Admin
+            </button>
+
+        </form>
+    </section>
+
+    <!-- ADMIN DASHBOARD -->
+    <section id="adminPanel" hidden>
+
+        <h1>Admin Dashboard</h1>
+        <p>Welcome to the Taal Junior and Senior High School Enrollment Records.</p>
+
+        <div class="dashboard-card">
+            <h2>Total Enrollment Records</h2>
+            <h1 id="recordCount">0</h1>
+        </div>
+
+        <div class="admin-actions">
+            <button type="button" class="btn"
+                onclick="showRecords()">
+                Refresh Records
+            </button>
+
+            <button type="button" class="btn"
+                onclick="exportCSV()">
+                Export to CSV
+            </button>
+
+            <button type="button" class="btn secondary"
+                onclick="adminLogout()">
+                Logout
+            </button>
+        </div>
+
+        <h2>Student Enrollment Records</h2>
+
+        <div id="recordsList">
+            No enrollment records yet.
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Taal Junior and Senior High School · Enrollment Portal</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

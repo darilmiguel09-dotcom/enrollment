@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Enrollment | Taal HS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            TAAL JUNIOR &amp; SENIOR HIGH SCHOOL
+            <small>Enrollment Portal · 2026–2027</small>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Account</a>
+            <a href="enrollment.html" class="active">Enrollment</a>
+            <a href="contact.html">Contact</a>
+            <a href="admin.html">Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="panel">
+
+            <div class="banner">
+                <h1>Student Enrollment Form</h1>
+                <p>School Year 2026–2027</p>
+            </div>
+
+            <form id="enrollmentForm">
+
+                <h3 class="section-title">Student Information</h3>
+
+                <div class="form-grid">
+
+                    <div class="field full">
+                        <label>Student Name</label>
+                        <input name="Student Name" required>
+                    </div>
+
+                    <div class="field">
+                        <label>LRN (12 digits)</label>
+                        <input name="LRN" required pattern="[0-9]{12}" maxlength="12">
+                    </div>
+
+                    <div class="field">
+                        <label>Age</label>
+                        <input name="Age" type="number" min="10" max="100" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Birth Date</label>
+                        <input name="Birth Date" type="date" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Gender</label>
+                        <div class="choice">
+                            <label>
+                                <input type="radio" name="Gender" value="Male" required>
+                                Male
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Gender" value="Female">
+                                Female
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Place of Birth</label>
+                        <input name="Place of Birth" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Nationality</label>
+                        <input name="Nationality" value="Filipino" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Religion (Optional)</label>
+                        <input name="Religion">
+                    </div>
+
+                    <div class="field">
+                        <label>Civil Status</label>
+                        <select name="Civil Status" required>
+                            <option value="">Select</option>
+                            <option>Single</option>
+                            <option>Married</option>
+                            <option>Widowed</option>
+                            <option>Separated</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Contact Number</label>
+                        <input name="Contact Number" type="tel" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Email Address</label>
+                        <input name="Email Address" type="email">
+                    </div>
+
+                    <div class="field full">
+                        <label>Complete Address</label>
+                        <input name="Complete Address" required>
+                    </div>
+
+                </div>
+
+                <h3 class="section-title">Parent / Guardian Information</h3>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label>Father's Name</label>
+                        <input name="Father's Name" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Father's Contact Number</label>
+                        <input name="Father Contact Number" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Mother's Name</label>
+                        <input name="Mother's Name" required>
+                    </div>
+
+                    <div class="field">
+                        <label>Mother's Contact Number</label>
+                        <input name="Mother Contact Number" required>
+                    </div>
+
+                </div>
+
+                <h3 class="section-title">Enrollment Information</h3>
+
+                <p class="muted" style="margin-top:0">
+                    Semester, Track and Strand appear only for Senior High School.
+                </p>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label>School Year</label>
+                        <input name="School Year" value="2026-2027" readonly>
+                    </div>
+
+                    <div class="field">
+                        <label>School Level</label>
+                        <div class="choice">
+                            <label>
+                                <input type="radio" name="School Level" value="Junior High School" required>
+                                Junior High (Grades 7–10)
+                            </label>
+
+                            <label>
+                                <input type="radio" name="School Level" value="Senior High School">
+                                Senior High (Grades 11–12)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Grade Level</label>
+                        <select id="grade" name="Grade Level" required disabled>
+                            <option value="">Select level first</option>
+                        </select>
+                    </div>
+
+                    <div class="field full">
+                        <label>Student Type</label>
+                        <div class="choice">
+                            <label>
+                                <input type="radio" name="Student Type" value="New Student" required>
+                                New Student
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Student Type" value="Transferee">
+                                Transferee
+                            </label>
+
+                            <label>
+                                <input type="radio" name="Student Type" value="Returning Student">
+                                Returning Student
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field shs-only" hidden>
+                        <label>Semester</label>
+                        <select name="Semester" required disabled>
+                            <option value="">Select</option>
+                            <option>1st Semester</option>
+                            <option>2nd Semester</option>
+                        </select>
+                    </div>
+
+                    <div class="field shs-only" hidden>
+                        <label>Track</label>
+                        <select id="track" name="Track" required disabled>
+                            <option value="">Select</option>
+                            <option>Academic</option>
+                            <option>TVL</option>
+                        </select>
+                    </div>
+
+                    <div class="field shs-only" hidden>
+                        <label>Strand</label>
+                        <select id="strand" name="Strand" required disabled>
+                            <option value="">Select track first</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <h3 class="section-title">Academic Information</h3>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label>Previous School Name</label>
+                        <input name="Previous School Name" required>
+                    </div>
+
+                    <div class="field">
+                        <label>School Address</label>
+                        <input name="School Address" required>
+                    </div>
+
+                    <div class="field">
+                        <label>School Year Completed</label>
+                        <input name="School Year Completed" required placeholder="2025-2026">
+                    </div>
+
+                    <div class="field">
+                        <label>General Weighted Average</label>
+                        <input
+                            name="General Weighted Average"
+                            type="number"
+                            min="0"
+                            max="100"
+                            step=".01"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <h3 class="section-title">Consent and Signature</h3>
+
+                <p class="consent-text">
+                    I confirm that all information provided above is true
+                    to the best of my knowledge.
+                </p>
+
+                <div class="form-grid">
+
+                    <div class="field full consent">
+                        <label class="check">
+                            <input type="checkbox" name="Consent" value="Agreed" required>
+                            I agree to the statement above.
+                        </label>
+                    </div>
+
+                    <div class="field full signature">
+                        <label>Applicant Signature (type your full name)</label>
+                        <input name="Applicant Signature" required>
+                    </div>
+
+                </div>
+
+                <div class="actions">
+
+                    <button class="primary">
+                        SUBMIT ENROLLMENT
+                    </button>
+
+                    <button type="button" class="secondary" onclick="window.print()">
+                        PRINT FORM
+                    </button>
+
+                    <button type="reset" class="secondary">
+                        CLEAR FORM
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary"
+                        onclick="logoutStudent()"
+                    >
+                        LOG OUT
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+    </main>
+
+    <footer>
+        © 2026 Taal Junior and Senior High School
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
