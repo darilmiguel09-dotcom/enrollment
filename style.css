@@ -588,8 +588,10 @@ footer {
         margin: 8px 0;
     }
 
-    .form-grid .field.consent { grid-template-columns: 1fr; }
+    .form-grid .field.consent,
+    .form-grid .field.signature { grid-template-columns: 1fr; }
 
+    .form-grid .field.signature { grid-template-columns: 150px 1fr; }
 }
 
 .consent-text {
@@ -611,6 +613,16 @@ label.check input { width: auto; accent-color: var(--blue); transform: scale(1.2
 .auth form h2, .auth-box h1 { color: var(--navy); }
 
 .auth .banner h2 { font-size: 26px; }
+
+/* ===== Print ===== */
+
+@media print {
+    header, footer, .actions, .tabs { display: none !important; }
+    body { background: #fff !important; }
+    .panel, .card { box-shadow: none; border: 0; }
+    .banner { color: #000; background: none; box-shadow: none; border-bottom: 3px solid #0b2a6b; }
+    .banner h1, .banner p { color: #0b2a6b; }
+}
 
 /* ===== Responsive ===== */
 
